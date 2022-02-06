@@ -58,6 +58,40 @@
                                         <input name="start_from" class="form-control" placeholder="" required="" id="datepicker">
                                     </div>
                                     <div class="form-group">
+                                        <label>DBS</label>
+                                        <input type="text" name="dbs" class="form-control" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label>DBS Expiry Date</label>
+                                        <input type="date" name="dbs_expiry_date" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Experence On</label>
+                                        <input type="text" name="experence_on" class="form-control" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Work Experience</label>
+                                        <input type="text" name="work_experience" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Time Preference</label>
+                                        <input type="text" name="time_preference" class="form-control" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label>NI Number</label>
+                                        <input type="text" name="ni_no" class="form-control" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nationality</label>
+                                        <input type="text" name="nationality" class="form-control" >
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <label>Visa Status</label>
+                                        <input type="text" name="visa_status" class="form-control" >
+                                    </div>
+                                    
+                                    <div class="form-group">
                                         <label>Image</label>
                                         <input type="file" name="image" accept="image/*" class="form-control">
                                     </div>

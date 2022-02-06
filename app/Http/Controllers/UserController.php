@@ -37,6 +37,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request,[
             'firstname'=>'required',
             'lastname'=>'required',
@@ -46,7 +47,7 @@ class UserController extends Controller
             'role_id'=>'required',
             'image'=>'mimes:jpeg,jpg,png',
             'start_from'=>'required',
-            'designation'=>'required'
+            'designation'=>'required',
         ]);
 
         $data = $request->all();

@@ -40,8 +40,8 @@ Route::group(['middleware' => ['auth', 'has.permission']], function(){
     Route::get('mail', [MailController::class, 'create'])->name('mails.create');
     Route::post('mail', [MailController::class, 'store'])->name('mails.store');
 
-
 });
+
 
 
 

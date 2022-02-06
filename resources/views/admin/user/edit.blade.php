@@ -56,6 +56,39 @@
                                         <input type="" name="start_from" class="form-control" placeholder="" required="" value="{{ $user->start_from }}" id="datepicker1">
                                     </div>
                                     <div class="form-group">
+                                        <label>DBS</label>
+                                        <input type="text" name="dbs" class="form-control" value="{{ $user->dbs }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>DBS Expiry Date</label>
+                                        <input type="date" name="dbs_expiry_date" class="form-control" value="{{ $user->dbs_expiry_date }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Experence On</label>
+                                        <input type="text" name="experence_on" class="form-control" value="{{ $user->experence_on }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Work Experience</label>
+                                        <input type="text" name="work_experience" class="form-control" value="{{ $user->work_experience }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Time Preference</label>
+                                        <input type="text" name="time_preference" class="form-control" value="{{ $user->time_preference }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>NI Number</label>
+                                        <input type="text" name="ni_no" class="form-control" value="{{ $user->ni_no }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nationality</label>
+                                        <input type="text" name="nationality" class="form-control" value="{{ $user->nationality }}">
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <label>Visa Status</label>
+                                        <input type="text" name="visa_status" class="form-control" value="{{ $user->visa_status }}">
+                                    </div>
+                                    <div class="form-group">
                                         <label>Image</label>
                                         <input type="file" name="image" accept="image/*" class="form-control">
                                     </div>
@@ -89,7 +122,7 @@
                             </div>
                             <br>
                             <div class="form-group">
-                                @if(isset(auth()->user->role->permission['name']['user']['can-edit']))
+                                @if(!isset(auth()->user->role->permission['name']['user']['can-edit']))
                                     <button class="btn btn-primary " type="submit">Update</button>
                                 @endif
                             </div>

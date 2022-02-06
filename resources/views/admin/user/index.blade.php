@@ -29,6 +29,14 @@
                                 <th>Start Date</th>
                                 <th>Address</th>
                                 <th>Mobile No:</th>
+                                <th>DBS</th>
+                                <th>DBS Expiry Date</th>
+                                <th>Experience On</th>
+                                <th>Work Experience</th>
+                                <th>Time Preference</th>
+                                <th>Ni Number</th>
+                                <th>Nationality</th>
+                                <th>Visa Status</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
@@ -46,6 +54,15 @@
                                         <td>{{ $user->start_from }}</td>
                                         <td>{{ $user->address }}</td>
                                         <td>{{ $user->mobile_number }}</td>
+                                        <td>{{ $user->dbs }}</td>
+                                        <td>{{ $user->dbs_expiry_date }}</td>
+                                        <td>{{ $user->experence_on }}</td>
+                                        <td>{{ $user->work_experience }}</td>
+                                        <td>{{ $user->time_preference }}</td>
+                                        <td>{{ $user->ni_no }}</td>
+                                        <td>{{ $user->nationality }}</td>
+                                        <td>{{ $user->visa_status }}</td>
+                                        
 
                                         <td>
                                             @if(isset(auth()->user()->role->permission['name']['user']['can-edit']))
@@ -54,39 +71,44 @@
                                         </td>
 
                                         <td>
+                                            {{-- <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal{{$leave->id}}">
+                                                Delete
+                                             </a>
                                             @if(isset(auth()->user()->role->permission['name']['user']['can-delete']))
                                                 <form action="{{ route('users.destroy', [$user->id]) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger">Delete</button>
                                                 </form>
-                                            @endif
-                                            {{-- <a href = "#" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $department->id }}"><i class="fas fa-trash"></i></a>
-                                            <!-- Modal -->
-                                                <div class="modal fade" id="exampleModal{{ $department->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <form action="{{ route('department.destroy', [$department->id]) }}" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            @endif --}}
+                                            @if(isset(auth()->user()->role->permission['name']['user']['can-delete']))
+                                                <a href = "#" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $user->id }}"><i class="fas fa-trash"></i></a>
+                                                <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModal{{ $user->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <form action="{{ route('users.destroy', [$user->id]) }}" method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        
+                                                                    ... Do you Want to Delete?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <button type="submit" class="btn btn-primary">Delete</button>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="modal-body">
-                                                                    
-                                                                ... Do you Want to Delete?
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                <button type="button" class="btn btn-primary">Delete</button>
-                                                                </div>
-                                                            </div>
-                                                        </form>
+                                                            </form>
+                                                        </div>
+                                                        
                                                     </div>
-                                                       
-                                                </div>
-                                            <!--End Delete Module here--> --}}
+                                                <!--End Delete Module here-->
+                                            @endif
                                             </td>
                                         
                                     </tr>
